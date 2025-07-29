@@ -1,35 +1,66 @@
 import Image from "next/image";
 
+const services = [
+  {
+    title: "Baths",
+    image:
+      "https://images.unsplash.com/photo-1619983085998-1c1427aa089f?auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    title: "Haircuts",
+    image:
+      "https://images.unsplash.com/photo-1605524967598-1e19b9d2869a?auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    title: "Nail Trims",
+    image:
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    title: "Styling",
+    image:
+      "https://images.unsplash.com/photo-1558944351-f833c1c68c20?auto=format&fit=crop&w=800&q=60",
+  },
+];
+
 export default function Home() {
   return (
-    <main
-      className="min-h-screen p-8 flex flex-col items-center text-center gap-12 bg-gradient-to-br from-yellow-50 to-pink-50 dark:from-neutral-950 dark:to-neutral-900 font-sans"
-    >
-      <h1 className="text-5xl font-bold">Dogwash</h1>
-      <p className="text-lg max-w-xl">
-        Pamper your pup with the coolest grooming in town! From speedy baths to
-        full spa days, we do it all.
-      </p>
-      <div className="relative w-full max-w-2xl h-80">
+    <main className="relative min-h-screen font-sans text-center flex flex-col items-center">
+      <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1601758062710-0f34ff031885?auto=format&fit=crop&w=1200&q=80"
+          src="https://images.unsplash.com/photo-1601758062710-0f34ff031885?auto=format&fit=crop&w=1400&q=80"
           alt="Freshly groomed dog"
           fill
-          className="object-cover rounded-xl shadow-lg"
+          priority
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-pink-500/40 dark:bg-pink-800/50 mix-blend-multiply" />
       </div>
-      <section className="max-w-xl w-full grid grid-cols-2 gap-4 text-lg">
-        <div className="p-4 bg-white/70 rounded-lg shadow">🛁 Baths</div>
-        <div className="p-4 bg-white/70 rounded-lg shadow">✂️ Haircuts</div>
-        <div className="p-4 bg-white/70 rounded-lg shadow">🐾 Nail Trims</div>
-        <div className="p-4 bg-white/70 rounded-lg shadow">🎀 Styling</div>
-      </section>
-      <a
-        href="#book"
-        className="mt-4 px-6 py-3 bg-pink-600 text-white rounded-full font-semibold hover:bg-pink-500 transition"
-      >
-        Book Now
-      </a>
+      <div className="relative w-full max-w-4xl mx-auto p-8 flex flex-col items-center gap-12 backdrop-blur-sm">
+        <h1 className="text-6xl font-bold tracking-tight">Dogwash</h1>
+        <p className="text-xl max-w-2xl">
+          Pamper your pup with the coolest grooming in town! From speedy baths to
+          full spa days, we do it all.
+        </p>
+        <section className="grid gap-6 w-full max-w-3xl md:grid-cols-2">
+          {services.map((service) => (
+            <div key={service.title} className="relative h-48 rounded-xl overflow-hidden shadow-lg">
+              <Image src={service.image} alt={service.title} fill className="object-cover" />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <span className="text-white text-2xl font-semibold drop-shadow-lg">
+                  {service.title}
+                </span>
+              </div>
+            </div>
+          ))}
+        </section>
+        <a
+          href="#book"
+          className="px-8 py-3 bg-pink-600 text-white rounded-full font-semibold hover:bg-pink-500 transition"
+        >
+          Book Now
+        </a>
+      </div>
     </main>
   );
 }
