@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8 flex flex-col items-center text-center gap-12 bg-gradient-to-br from-yellow-50 to-pink-50 font-sans">
+    <main
+      className="min-h-screen p-8 flex flex-col items-center text-center gap-12 bg-gradient-to-br from-yellow-50 to-pink-50 dark:from-neutral-950 dark:to-neutral-900 font-sans"
+    >
       <h1 className="text-5xl font-bold">Dogwash</h1>
       <p className="text-lg max-w-xl">
         Pamper your pup with the coolest grooming in town! From speedy baths to
