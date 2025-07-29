@@ -4,22 +4,22 @@ const services = [
   {
     title: "Baths",
     image:
-      "https://images.unsplash.com/photo-1619983085998-1c1427aa089f?auto=format&fit=crop&w=800&q=60",
+      "/images/cat1.png",
   },
   {
     title: "Haircuts",
     image:
-      "https://images.unsplash.com/photo-1605524967598-1e19b9d2869a?auto=format&fit=crop&w=800&q=60",
+      "/images/dog1.png",
   },
   {
     title: "Nail Trims",
     image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=60",
+      "/images/dog2.png",
   },
   {
     title: "Styling",
     image:
-      "https://images.unsplash.com/photo-1558944351-f833c1c68c20?auto=format&fit=crop&w=800&q=60",
+      "/images/cat2.png",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function Home() {
     <main className="relative min-h-screen font-sans text-center flex flex-col items-center">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1601758062710-0f34ff031885?auto=format&fit=crop&w=1400&q=80"
+          src="/images/dog3.png"
           alt="Freshly groomed dog"
           fill
           priority
